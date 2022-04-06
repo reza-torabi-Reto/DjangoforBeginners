@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block main %}
+
+<div>
+    <h2>{{object.title}}</h2>
+    <p>user: {{object.author}}</p>
+    <p>{{object.body}}</p>
+    <p>{{object.hits.count}}</p>
+</div>
+
+<a href="{% url 'blog:update-post' post.pk %}">Edit</a>
+<a href="{% url 'blog:delete-post' post.pk %}">Delete</a>
+<hr>
+
+<hr>
+{% for cm in object.comments.all %}
+    <div>
+        <h4>{{cm.author}}</h4>
+        <p>{{cm.comment}}</p>
+    </div>
+    <hr>
+{% endfor %}
+{% endblock %}

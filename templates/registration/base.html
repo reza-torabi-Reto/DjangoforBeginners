@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Site</title>
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'blog:home' %}">HOME</a>
+        <a href="{% url 'blog:new-post' %}">NEW</a>
+    </header>
+    {% block main %}
+
+    {% endblock main %}
+
+    <footer>
+        <h2>Footer Site</h2>
+    </footer>
+</body>
+</html>

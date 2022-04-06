@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+
+{% block main %}
+<h2>Log In</h2>
+<form action="" method="post">
+    {%  csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" class="btn btn-success ml-2" value="Log In">
+    <a href="{% url 'password_reset' %}">بازیابی گذرواژه</a>
+</form>
+{% endblock %}
